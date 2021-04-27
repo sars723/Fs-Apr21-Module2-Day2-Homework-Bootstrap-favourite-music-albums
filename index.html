@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and linked to EduFlow by the end of the day.
+- You can google / use StackOverflow BUT we suggest you to use just the material provided.
+- To test the page, just open it with your default browser.
+- Use Bootstrap4.6 classes to render the page.
+- Use containers, rows and cols in order to achieve a great responsive layout.
+ASSIGNMENT TOPIC
+You are creating a website to showcase your favourite music albums.
+In this page you'd have a short biography section of yourself, and the top albums of your life, 
+the worst album you ever listened to and everything related to the music you love.
+
+NOTE:
+Most of the times, even the most expert of designers need inspiration.
+Spend 30 minutes surfing the web and searching the best way of rapresenting the album you love the most.
+Could be the Amazon way, the Spotify or Apple music way or some other blog out there.
+-->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- IMPORT ALL THE BOOTSTRAP RELATED CSS & SCRIPTS-->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="path/to/font-awesome/css/font-awesome.min.css"
+    />
+
+    <style>
+      /* EXERCISE 1
+            For all Albums we'd like to have a consistent style.
+            Create a class for:
+            - The album container
+            - The album cover
+            - The album title
+            - The album group / singer / dj
+            - The album genre
+            - The album duration
+            - etc
+         */
+      .album-container {
+      }
+      .album-cover {
+      }
+      .album-title {
+      }
+      .album-artist {
+        font-weight: bold;
+        color: #815921;
+      }
+      .album-genre {
+        color: #350101;
+      }
+      .album-duration {
+      }
+      .squared {
+        width: 300px;
+        height: 300px;
+      }
+      .bg-intro {
+        object-fit: cover;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -1;
+      }
+      .fa {
+        padding: 6px;
+        font-size: 15px;
+        width: 25px;
+        text-align: center;
+        text-decoration: none;
+      }
+
+      /* Add a hover effect if you want */
+      .fa:hover {
+        opacity: 0.7;
+      }
+
+      /* Set a specific color for each brand */
+
+      /* Facebook */
+
+      a {
+        color: #212529;
+        text-decoration: none;
+      }
+      li {
+        list-style: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- EXERCISE 2 
+            Implement a navigation bar using the bootstrap component
+            This navigation bar must link every section in your page
+        -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#"
+        ><img src="/images/logo.jfif" alt="" style="width: 40px"
+      /></a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Favourite Albums <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#favorite-album">Best album ever</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#album-reviews">Album reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#hall-of-shame">Hall of shame</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#favorite-band">Best Band</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tapstery">Tapestry</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- EXERCISE 3
+            Create a responsive section for your favourite albums.
+            In this section you should have:
+            - 4 albums per row when the screen is very large
+            - 3 albums per row when you are on a tablet (or a smaller viewport)
+            - 2 albums per row when you are on a small screen
+        -->
+      <section id="favorite-album">
+        <div class="text-center mt-5 mb-2">
+          <h3>Favorite albums</h3>
+        </div>
+
+        <button
+          class="btn btn-dark text-center mb-3"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapseExample"
+          aria-expanded="false"
+          aria-controls="collapseExample"
+        >
+          Find More!
+        </button>
+
+        <div class="collapse" id="collapseExample">
+          <div class="row text-center">
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="album-container">
+                <img
+                  src="/images/pexels-brett-sayles-2479312.jpg "
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4 class="album-title">Oil of Every Pearl's Un-Insides</h4>
+                <span class="album-artist">Sophie </span><br />
+                <span class="album-genre">Hip Hop/Rap</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="album-container">
+                <img
+                  src="/images/pexels-brett-sayles-2479312.jpg "
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4 class="album-title">Ordinary Corrupt Human Love</h4>
+                <span class="album-artist">Deafheaven</span><br />
+                <span class="album-genre">R&B</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="album-container">
+                <img
+                  src="/images/pexels-brett-sayles-2479312.jpg "
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4 class="album-title">Sweetener</h4>
+                <span class="album-artist">Ariana Grande</span><br />
+                <span class="album-genre">Country</span>
+              </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3">
+              <div class="album-container">
+                <img
+                  src="/images/pexels-brett-sayles-2479312.jpg "
+                  class="img-fluid"
+                  alt=""
+                />
+                <h4 class="album-title">Acts of Fear & Love</h4>
+                <span class="album-artist">Slaves</span><br />
+                <span class="album-genre">Latin</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXERCISE 4
+            Create a section for the album reviews.
+            Pick one of your fav albums, and create a section with:
+            - Cover
+            - Title
+            - Band
+            - Duration
+            - Genre
+            - Tracklist
+            - ... And whatever you think it's interesting about it!
+        -->
+      <section id="album-reviews">
+          <div class=" text-center my-5">
+              <h3>Album reviews</h3>
+            </div>
+        <div class="container">
+            <button
+          class="btn btn-dark text-center mb-3"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapse-review"
+          aria-expanded="false"
+          aria-controls="collapse-review"
+        >
+          Find More!
+        </button>
+        <div class="collapse" id="collapse-review">
+          <div class="row text-center">
+          
+            
+            <div class="col-12 col-md-8">
+                <span>click on the picture to see more</span>
+              <img
+                src="/images/pexels-kampus-production-5935238.jpg"
+                class="img-fluid"
+                onclick="showAlbumDetail()"
+                alt=""
+              />
+            </div>
+            <div id="toogle-album-detail" class=" col-12 col-md-4">
+                
+              <div id="album-detail" style="display: none;">
+                <h5>Title: Acts of Fear & Love</h5>
+                <h5>Band: Afro Band</h5>
+                <h5>Genre: Latin</h5>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Temporibus iusto tempore harum officiis aperiam magnam
+                  similique rerum, quam qui tenetur Lorem ipsum dolor sit amet
+                  consectetur adipisicing elit. Nobis quae, esse blanditiis hic
+                  culpa accusamus ab cumque voluptas repellat. Fuga fugit
+                  accusantium at veritatis cumque nemo impedit rerum temporibus
+                  voluptatum!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXERCISE 5
+            Worst album list! Find out the music you don't really like or you find overrated and list it
+            in this "hall of shame" chart!
+        -->
+      <section id="hall-of-shame">
+           <div class=" text-center my-5">
+              <h2>Hall of Shame</h2>
+            </div>
+            <button
+            class="btn btn-dark text-center mb-3"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapse-hall-of-shame"
+            aria-expanded="false"
+            aria-controls="collapse-hall-of-shame"
+          >
+            Find More!
+          </button>
+  
+          <div class="collapse" id="collapse-hall-of-shame">
+            <div class="row text-center">
+         
+           
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <img
+                src="/images/pexels-matthias-groeneveld-4200745.jpg"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <img
+                src="/images/pexels-matthias-groeneveld-4200745.jpg"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <img
+                src="/images/pexels-matthias-groeneveld-4200745.jpg"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+              <img
+                src="/images/pexels-matthias-groeneveld-4200745.jpg"
+                class="img-fluid w-100"
+                alt=""
+              />
+            </div>
+          </div>
+          </div>
+      </section>
+
+      <!-- EXERCISE 6
+            Do you have any musician / band you admire or you are a fan of?
+            This section is dedicated to him / her / them!
+            Feel free to experiment in this part of the page.
+        -->
+      <section id="favorite-band"> 
+          <div class="col-12 text-center my-5">
+            <h2>Favorite Band</h2>
+          </div>
+          <button
+          class="btn btn-dark text-center mb-3"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapse-band"
+          aria-expanded="false"
+          aria-controls="collapse-band"
+        >
+          Find More!
+        </button>
+
+        <div class="collapse" id="collapse-band">
+        <div class="row my-5">
+         
+          <div class="col-12 col-md-8">
+            <img
+              src="/images/pexels-skylar-kang-6368944.jpg"
+              class="img-fluid w-100"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-md-4">
+            <h4>Favorite Band</h4>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore
+              corporis eius omnis excepturi temporibus sequi tenetur minima vel
+              sunt voluptate! Nemo amet totam assumenda. Eligendi laboriosam
+              sapiente corrupti? Nam, totam! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Molestias quis provident quaerat
+              dolore! Officia quis nemo autem, ad id possimus similique
+              exercitationem in quam rerum maiores ut dolores suscipit modi?
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint
+              officiis eius, dolor tenetur vitae impedit tempore, quos in, quia
+              maiores ipsum fuga ad dignissimos provident. Veritatis quisquam
+              incidunt accusantium minus!
+            </p>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- EXERCISE 7
+            Just covers!
+            Create a tapestry of album pictures. Every album picture must be "square" (use CSS to do that).
+            Put at least 20 covers (also repeated) to have a nice effect and see how Bootstrap handles it.
+        -->
+
+      <section id="tapstery">
+          <div class="col-12 text-center my-5">
+            <h2>Album Pictures</h2>
+          </div>
+
+          <button
+          class="btn btn-dark text-center mb-3"
+          type="button"
+          data-toggle="collapse"
+          data-target="#collapse-tapestry"
+          aria-expanded="false"
+          aria-controls="collapse-tapestry"
+        >
+          Find More!
+        </button>
+
+        <div class="collapse" id="collapse-tapestry">
+        <div class="row">
+          
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-ashutosh-sonwani-1762578.jpg"
+              class="img-fluid squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-cottonbro-3693108.jpg"
+              class="img-fluid squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-skylar-kang-6368956.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-vlad-bagacian-1337753.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-ashutosh-sonwani-1762578.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-cottonbro-3693108.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-skylar-kang-6368956.jpg"
+              class="img-fluid w-100"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-vlad-bagacian-1337753.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-ashutosh-sonwani-1762578.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-cottonbro-3693108.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-skylar-kang-6368956.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-vlad-bagacian-1337753.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-ashutosh-sonwani-1762578.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-cottonbro-3693108.jpg"
+              class="img-fluid w-100 squared p-1 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-skylar-kang-6368956.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-vlad-bagacian-1337753.jpg"
+              class="img-fluid w-100 squared p-1"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-ashutosh-sonwani-1762578.jpg"
+              class="img-fluid w-100 squared"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-cottonbro-3693108.jpg"
+              class="img-fluid w-100 squared"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-skylar-kang-6368956.jpg"
+              class="img-fluid w-100 squared"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+          <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <img
+              src="/images/pexels-vlad-bagacian-1337753.jpg"
+              class="img-fluid w-100 squared"
+              style="height: 300px; object-fit: cover"
+              alt=""
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- EXERCISE 8
+            Implement a footer with some information / social links
+        -->
+    <section class="footer mb-2 mt-5">
+      <div
+        class="container-fluid text-white bg-light p-3"
+        style="background-color: rgba(0, 0, 0, 0.2)"
+      >
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <div class="mb-1">
+              <label for="exampleFormControlInput1" class="form-label"
+                >Email address</label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="exampleFormControlInput1"
+                placeholder="name@example.com"
+              />
+            </div>
+            <div class="mb-1">
+              <label for="exampleFormControlTextarea1" class="form-label"
+                >Example textarea</label
+              >
+              <textarea
+                class="form-control"
+                id="exampleFormControlTextarea1"
+                rows="3"
+              ></textarea>
+              <div class="d-flex">
+                <button class="btn btn-outline-dark mx-auto my-1">
+                  Contact me
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-md-3 text-center d-flex justify-content-center flex-column"
+          ><span id=countAlbums class="text-danger"></span>
+            <h6 class="text-dark">Sites</h6>
+            <li><a href="#favorite-album">Best Album</a></li>
+            <li><a href="#hall-of-shame">Wall of Shame</a></li>
+            <li><a href="#album-reviews">Album review</a></li>
+            <li><a href="#favorite-band">Best Band </a></li>
+            <li><a href="#tapstery"> Tapestry</a></li>
+          </div>    
+          <div
+            class="col-12 col-md-3 d-flex text-center justify-content-center align-items-center flex-column"
+          >
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-instagram"></a>
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-youtube"></a>
+          </div>
+          <div
+            class="col text-center bg-dark text-white p-3"
+           
+          >
+            <h6>2020 Copyright reserved</h6>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXTRA:
+            EXERCISE 9
+            Create an album details area that is going to be toggled on and off by clicking on the album image
+        -->
+
+    <!-- EXERCISE 10
+            Add a button to each section. By clicking on it the section body appears (if hidden) or disappears (if visible) 
+            (hint: look for a boostrap component that can handle the job for you. You can always rely on DOM manipulation if you can't find it)
+        -->
+
+    <!--
+         EXERCISE 11
+            Add in the footer a field that counts, on page load, how many ALBUMS there are on the page 
+        -->
+
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+         function showAlbumDetail()
+        {
+            console.log(document.getElementById("album-detail"))
+            const divAlbumDetail=document.getElementById("album-detail")
+            if (divAlbumDetail.style.display === "none") {
+                divAlbumDetail.style.display = "block";
+             } else {
+             divAlbumDetail.style.display = "none";
+        }
+          /*   albumDetail.style.cssText = 'visibility:visible !important' */
+        }
+        window.onload=function(){
+            const allImage=document.getElementsByTagName("img")
+            const spanToDisplayNoOfAlbums=document.getElementById("countAlbums")
+            spanToDisplayNoOfAlbums.innerText="Number of Albums On this Page: "+ allImage.length
+        }
+    </script>
+  </body>
+</html>
